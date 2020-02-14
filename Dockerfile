@@ -1,6 +1,6 @@
 FROM centos:8
 
-ARG TERRAFORM_VERSION="0.12.12"
+ARG TERRAFORM_VERSION="0.12.17"
 
 ENV PATH="/root/.local/bin:${PATH}"
 
