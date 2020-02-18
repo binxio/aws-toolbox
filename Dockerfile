@@ -36,6 +36,11 @@ RUN pip3 install --upgrade --user \
 RUN curl "https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-latest" -o "/usr/local/bin/ecs-cli" && \
     chmod 755 /usr/local/bin/ecs-cli
 
+# Install eksctl
+RUN curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp && \
+    mv /tmp/eksctl /usr/local/bin && eksctl version
+    
+
 # Install latest version of kubectl
 RUN sh -c 'echo -e "[kubernetes] \n\
 name=Kubernetes \n\
